@@ -208,7 +208,7 @@
         <v-card-title>
           <span class="headline">
             {{ $t("send.going_to_send") }}
-            <v-chip label>{{ this.amount }}QTUM</v-chip>
+            <v-chip label>{{ this.amount }}BUTK</v-chip>
             {{ $t("send.to_address") }}
             <v-chip label>{{ this.toAddress }}</v-chip>
             {{ $t("common.question_mark") }}

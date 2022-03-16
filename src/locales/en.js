@@ -121,7 +121,7 @@ export default {
         title: 'Create Token',
         name: 'Token Name',
         symbol: 'Token Symbol',
-        decimal: 'Decimals (It\'s recommended to set decimals to 8 in QTUM)',
+        decimal: 'Decimals (It\'s recommended to set decimals to 8 in BUTK)',
         total_supply: 'Total Supply (UNIT: 1 Token)',
         confirm: 'Do you confirm to create this Token?'
     },
@@ -163,8 +163,8 @@ export default {
     },
     restore_ledger: {
         title: 'Restore From Ledger',
-        usage: 'Please ensure your firmware and app are the newest version. Plugin your Ledger, open Qtum APP, and then click the "CONNECT" button below try to connect.',
-        download: 'No Qtum APP? Please install it follow this https://www.ledgerwallet.com/apps/manager',
+        usage: 'Please ensure your firmware and app are the newest version. Plugin your Ledger, open Butk APP, and then click the "CONNECT" button below try to connect.',
+        download: 'No Butk APP? Please install it follow this https://www.ledgerwallet.com/apps/manager',
         connect: 'CONNECT'
     },
     view: {

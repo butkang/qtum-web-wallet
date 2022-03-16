@@ -6,13 +6,13 @@ let domain = ''
 
 switch (config.getNetwork()) {
     case 'testnet':
-        domain = 'https://testnet.qtum.info'
+        domain = 'https://testnet.qtum.i'
         break
     case 'mainnet':
-        domain = 'https://qtum.info'
+        domain = 'https://explorer.butcoin.tech'
         break
 }
-const apiPrefix = domain + '/api'
+const apiPrefix = domain + '/insight-api'
 
 const _get = async url => {
     return (await axios.get(apiPrefix + url)).data

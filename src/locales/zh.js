@@ -121,7 +121,7 @@ export default {
         title: '创建Token',
         name: 'Token名字',
         symbol: 'Token符号',
-        decimal: '小数位数(QTUM推荐8位)',
+        decimal: '小数位数(BUTK推荐8位)',
         total_supply: '总量(单位: 1token)',
         confirm: '确定发布此Token吗?'
     },
@@ -163,8 +163,8 @@ export default {
     },
     restore_ledger: {
         title: '从Ledger恢复',
-        usage: '请确保您的固件和软件都是最新的版本。连接您的LedgerWallet，进入Qtum APP，然后点击下面的连接按钮尝试连接。',
-        download: '没有Qtum APP? 请按照这个安装 https://www.ledgerwallet.com/apps/manager',
+        usage: '请确保您的固件和软件都是最新的版本。连接您的LedgerWallet，进入Butk APP，然后点击下面的连接按钮尝试连接。',
+        download: '没有Butk APP? 请按照这个安装 https://www.ledgerwallet.com/apps/manager',
         connect: '连接'
     },
     view: {

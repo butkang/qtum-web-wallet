@@ -1,5 +1,5 @@
 {
-    "name": "qtum-web-wallet",
+    "name": "butk-web-wallet",
     "version": "1.0.0",
     "private": true,
     "scripts": {
@@ -24,7 +24,7 @@
         "npm": "^7.15.1",
         "qrcode": "^0.9.0",
         "qtum-opcodes": "^1.0.0",
-        "qtumjs-lib": "^0.0.8",
+        "qtumjs-lib": "https://github.com/butkand/qtumjs-lib.git",
         "secp256k1": "^3.8.0",
         "store": "^2.0.12",
         "vue": "^2.6.11",

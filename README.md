@@ -1,2 +1,2 @@
-# qtum-web-wallet
-A web wallet for QTUM.
+# butk-web-wallet
+A web wallet for BUTK.

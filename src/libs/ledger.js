@@ -39,15 +39,15 @@ export default class Ledger {
   }
 
   static get defaultPath() {
-    return 'm/44\'/88\'/0\'/0'
+    return 'm/44\'/631\'/0\'/0'
   }
 
   static async connect() {
     const qtum = new btcApp(await transportU2f.create())
     // ensure in Qtum App
     const pubkeyRes = await qtum.getWalletPublicKey(Ledger.defaultPath)
-    if (pubkeyRes.bitcoinAddress[0] !== 'Q') {
-      throw 'Not Qtum App'
+    if (pubkeyRes.bitcoinAddress[0] !== 'X') {
+      throw 'Not Butk App'
     }
     return new Ledger(qtum)
   }

@@ -9,7 +9,7 @@ import config from '@/libs/config'
 import { sha256d } from '@/libs/hash'
 import { Buffer } from 'buffer'
 
-const unit = 'QTUM'
+const unit = 'BUTK'
 let network = {}
 switch (config.getNetwork()) {
     case 'testnet':
@@ -219,10 +219,10 @@ export default class Wallet {
       let reg
       switch (config.getNetwork()) {
         case 'testnet':
-            reg = /^q\w{33}/g
+            reg = /^X\w{33}/g
             return reg.test(address)
         case 'mainnet':
-            reg = /^Q\w{33}/g
+            reg = /^X\w{33}/g
             return reg.test(address)
       }
       return false
