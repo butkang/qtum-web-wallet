@@ -22,12 +22,6 @@ export default {
             safe_send: 'Safe Send',
             send: 'Send',
             request_payment: 'Request Payment',
-            create_token: 'Create Token',
-            create_contract: 'Create Contract',
-            send_to_contract: 'Send To Contract',
-            call_contract: 'Call Contract',
-            create_NFT: 'Create NFT',
-            delegation: 'Offline Staking',
             settings: 'Settings'
         },
         info: {
@@ -57,9 +51,7 @@ export default {
             restore_wif_fail: 'Cannot restore a wallet from this WIF',
             the_key_file_is_not_a_valid_format: 'The key file is not a valid format',
             restore_key_file_fail: 'Restore from key file failed. Maybe the password is not correct',
-            connect_ledger_fail: 'Fail to connect Ledger. Please re-plugin your ledger and try again',
-            token_contract_address_is_not_exists: 'Token contract address is not exists, please confirm and try again'
-        },
+            connect_ledger_fail: 'Fail to connect Ledger. Please re-plugin your ledger and try again'        },
         mode: {
             normal: 'Normal',
             offline: 'Offline'
@@ -116,27 +108,6 @@ export default {
     },
     request_payment: {
         title: 'Request Payment'
-    },
-    create_token: {
-        title: 'Create Token',
-        name: 'Token Name',
-        symbol: 'Token Symbol',
-        decimal: 'Decimals (It\'s recommended to set decimals to 8 in BUTK)',
-        total_supply: 'Total Supply (UNIT: 1 Token)',
-        confirm: 'Do you confirm to create this Token?'
-    },
-    create_contract: {
-        title: 'Create Contract',
-        confirm: 'Do you confirm to publish this contract?',
-        compiler: 'Compiler'
-    },
-    send_to_contract: {
-        title: 'Send To Contract',
-        confirm: 'Do you confirm?'
-    },
-    call_contract: {
-        title: 'Call Contract',
-        result: 'Result'
     },
     create: {
         title: 'Generate new Wallet'
@@ -200,30 +171,5 @@ export default {
             'Please keep your private keys PRIVATE, do not give them to anyone.',
             'If you use Restore from Mnemonic, the seed words and password must be exactly right or the wallet will create a new address. When using Restore from Mnemonic, confirm you have the correct address.'
         ]
-    },
-    delegation: {
-        title: 'Offline Staking',
-        add: 'Add Delegation',
-        remove: 'Remove Delegation',
-        contract_success: 'Contract send successfully.',
-        delegated: 'Address has been delegated.',
-        refresh_success: 'Refresh successfully',
-        address: 'Address: {address}',
-        super_staker: 'Super Staker: {superStaker}',
-        processing: 'The contract is being processed.'
-    },
-    nft: {
-        title: 'NFT',
-        send: 'send',
-        create_title: 'CREATE NFT',
-        create_name: 'NFT Name',
-        create_symbol: 'NFT Symbol',
-        create_desc: 'NFT Desc',
-        create_supply: 'NFT amount(MAX 10)',
-        send_nft: 'send NFT',
-        close_confirm: 'close',
-        send_confirm: 'confirm',
-        send_address: 'address',
-        send_amount: 'amount'
     }
 }

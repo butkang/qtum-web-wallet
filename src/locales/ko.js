@@ -22,11 +22,6 @@ export default {
             safe_send: '안전한 전송',
             send: '전송',
             request_payment: '지불 요청',
-            create_contract: '컨트랙트 생성',
-            send_to_contract: '컨트랙트 보내기',
-            call_contract: '콜 컨트랙트',
-            create_NFT: 'nft 만들기',
-            delegation: '오프라인 스테이킹',
             settings: '설정'
         },
         info: {
@@ -56,9 +51,8 @@ export default {
             restore_wif_fail: '이 WIF에서 지갑을 복원할 수 없습니다.',
             the_key_file_is_not_a_valid_format: '키 파일이 올바른 형식이 아닙니다.',
             restore_key_file_fail: '키 파일에서 복원에 실패했습니다. 패스워드가 올바르지 않을 수 있습니다.',
-            connect_ledger_fail: 'Ledger 연결 실패. Ledger를 다시 플러그인 하고 재시도하십시오.',
-            token_contract_address_is_not_exists: '토큰 컨트랙트 주소가 없습니다. 확인한 후 다시 시도하십시오'
-        },
+            connect_ledger_fail: 'Ledger 연결 실패. Ledger를 다시 플러그인 하고 재시도하십시오.'
+       },
         mode: {
             normal: '노멀',
             offline: '오프라인'
@@ -115,19 +109,6 @@ export default {
     },
     request_payment: {
         title: '지불 요청'
-    },
-    create_contract: {
-        title: '컨트랙트 생성',
-        confirm: '이 컨트랙트를 게시하시겠습니까?',
-        compiler: '컴파일러'
-    },
-    send_to_contract: {
-        title: '컨트랙트 전송',
-        confirm: '확인하셨나요?'
-    },
-    call_contract: {
-        title: '콜 컨트랙트',
-        result: '결과'
     },
     create: {
         title: '새 지갑 생성'
@@ -191,30 +172,5 @@ export default {
             '개인 키는 누구에게도 제공하지 마십시오.',
             '니모닉에서 복원을 사용하는 경우 시드 단어와 비밀번호가 정확히 맞아야하며 그렇지 않으면 지갑이 새 주소를 만듭니다. 니모닉에서 복원을 사용할 때 정확한 주소를 가지고 있는지 확인하십시오.'
         ]
-    },
-    delegation: {
-        title: '오프라인 스테이킹',
-        add: '위임 추가',
-        remove: '위임 삭제',
-        contract_success: '컨트랙트 내보내기 성공',
-        delegated: '주소 위임 완료',
-        refresh_success: '',
-        address: '',
-        super_staker: '',
-        processing: ''
-    },
-    nft: {
-        title: 'NFT',
-        send: '보내기',
-        create_title: '생성 NFT',
-        create_name: 'NFT 이름',
-        create_symbol: 'NFT 기호',
-        create_desc: 'NFT 설명',
-        create_supply: 'NFT 총량(MAX 10)',
-        send_nft: '이전 NFT',
-        close_confirm: '닫기',
-        send_confirm: '확인',
-        send_address: '주소',
-        send_amount: '수량'
     }
 }

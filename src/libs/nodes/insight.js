@@ -25,14 +25,6 @@ export default {
         return await _get(`/addr/${address}`)
     },
 
-    async getQrc20(address) {
-        return await _get(`/erc20/balances?balanceAddress=${address}`)
-    },
-
-    async getTokenInfo(contractAddress) {
-        return await _get(`/qrc20/${contractAddress}`)
-    },
-
     async getTxList(address) {
         return await _get(`/txs/?address=${address}`)
     },
@@ -43,7 +35,6 @@ export default {
                 address: item.address,
                 txid: item.txid,
                 confirmations: item.confirmations,
-                isStake: item.isStake,
                 amount: item.amount,
                 value: item.satoshis,
                 hash: item.txid,
@@ -66,11 +57,5 @@ export default {
 
     getAddrExplorerUrl(addr) {
         return `${domain}/address/${addr}`
-    },
-
-    async callContract(address, encodedData) {
-        return (await _get(`/contracts/${address}/hash/${encodedData}/call`))[
-            'executionResult'
-        ]['output']
     }
 }

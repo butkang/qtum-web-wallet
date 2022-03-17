@@ -27,9 +27,6 @@ export default {
         return await _get(`/address/${address}`)
     },
 
-    async getTokenInfo(contractAddress) {
-        return await _get(`/qrc20/${contractAddress}`)
-    },
 
     async getTxList(address, size = 10) {
         const res = await _get(`/address/${address}/txs?page=0&pageSize=${size}`)
@@ -42,7 +39,6 @@ export default {
                 address: item.address,
                 txid: item.transactionId,
                 confirmations: item.confirmations,
-                isStake: item.isStake,
                 amount: item.value,
                 value: item.value,
                 hash: item.transactionId,
@@ -69,11 +65,6 @@ export default {
 
     getAddrExplorerUrl(addr) {
         return `${domain}/address/${addr}`
-    },
-
-    async callContract(address, encodedData) {
-        return (await _get(`/contract/${address}/call/?data=${encodedData}`))
-            .executionResult.output
     },
 
     async getQtumInfo() {

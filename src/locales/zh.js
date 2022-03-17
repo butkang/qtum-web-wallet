@@ -23,11 +23,6 @@ export default {
             send: '转账',
             request_payment: '收款码',
             create_token: '创建Token',
-            create_contract: '创建智能合约',
-            send_to_contract: '向智能合约发送数据',
-            call_contract: '调用智能合约',
-            create_NFT: '创建NFT',
-            delegation: '离线挖矿',
             settings: '设置'
         },
         info: {
@@ -57,8 +52,7 @@ export default {
             restore_wif_fail: '从此密钥不能恢复钱包，请再次确认',
             the_key_file_is_not_a_valid_format: '加密文件格式不对',
             restore_key_file_fail: '可能是加密文件的解密密码不对，从此加密文件不能恢复钱包，请再次确认',
-            connect_ledger_fail: '连接Ledger失败，请按上面的操作重做一次。如果还是失败，请把Ledger拔下来后重试',
-            token_contract_address_is_not_exists: 'Token合约地址不存在，请确认后再试'
+            connect_ledger_fail: '连接Ledger失败，请按上面的操作重做一次。如果还是失败，请把Ledger拔下来后重试'
         },
         mode: {
             normal: '正常模式',
@@ -116,27 +110,6 @@ export default {
     },
     request_payment: {
         title: '收款码'
-    },
-    create_token: {
-        title: '创建Token',
-        name: 'Token名字',
-        symbol: 'Token符号',
-        decimal: '小数位数(BUTK推荐8位)',
-        total_supply: '总量(单位: 1token)',
-        confirm: '确定发布此Token吗?'
-    },
-    create_contract: {
-        title: '创建智能合约',
-        confirm: '确定发布此智能合约吗?',
-        compiler: '编译器'
-    },
-    send_to_contract: {
-        title: '向智能合约发送数据',
-        confirm: '确定发送吗?'
-    },
-    call_contract: {
-        title: '调用智能合约',
-        result: '执行结果'
     },
     create: {
         title: '创建新钱包'
@@ -200,30 +173,5 @@ export default {
             '请私下保存您的私钥或助记词，不要告诉任何人。',
             '如果使用了从助记词恢复地址的方式，请保证助记词和密码的绝对正确。输入任意的助记词和密码都会生成地址，如果有细微的不同都可能会导致生成跟原来不同的地址。'
         ]
-    },
-    delegation: {
-        title: '离线挖矿',
-        add: '添加代理',
-        remove: '移除代理',
-        contract_success: '合约发送成功。',
-        delegated: '地址已代理。',
-        refresh_success: '刷新成功',
-        address: '地址：{address}',
-        super_staker: '代理地址：{superStaker}',
-        processing: '合约正在处理。'
-    },
-    nft: {
-        title: 'NFT',
-        send: '发送',
-        create_title: '创建NFT',
-        create_name: 'NFT名称',
-        create_symbol: 'NFT符号',
-        create_desc: 'NFT描述',
-        create_supply: 'NFT总量(MAX 10)',
-        send_nft: '转移NFT',
-        close_confirm: '关闭',
-        send_confirm: '确认',
-        send_address: '地址',
-        send_amount: '数量'
     }
 }

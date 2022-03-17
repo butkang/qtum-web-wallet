@@ -83,48 +83,4 @@ export default class Ledger {
     const outputsScript = outputs.buildIncomplete().toHex().slice(10, -8)
     return await ledger.qtum.createPaymentTransactionNew(inputs, paths, undefined, outputsScript)
   }
-
-  static async generateSendToContractTx(keyPair, ledger, path, from, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList, rawTxFetchFunc = () => {}) {
-    const pubkeyRes = await ledger.qtum.getWalletPublicKey(path)
-    if (pubkeyRes.bitcoinAddress !== from) {
-      throw 'Ledger can not restore the source address, please plugin the correct ledger'
-    }
-
-    const amount = 0
-    const amountSat = new BigNumber(amount).times(1e8)
-    fee = new BigNumber(gasLimit).times(gasPrice).div(1e8).add(fee).toNumber()
-    const feeSat = new BigNumber(fee).times(1e8)
-    let totalSelectSat = new BigNumber(0)
-    const inputs = []
-    const paths = []
-    const selectUtxo = qtumJsLib.utils.selectTxs(utxoList, amount, fee)
-    const rawTxCache = {}
-    for(let i = 0; i < selectUtxo.length; i++) {
-      const item = selectUtxo[i]
-      if (!rawTxCache[item.hash]) {
-        rawTxCache[item.hash] = await rawTxFetchFunc(item.hash)
-      }
-      paths.push(path)
-      totalSelectSat = totalSelectSat.plus(item.value)
-      inputs.push([
-        await ledger.qtum.splitTransaction(rawTxCache[item.hash]),
-        item.pos
-      ])
-    }
-
-    const outputs = new qtumJsLib.TransactionBuilder(keyPair.network)
-    const contract =  qtumJsLib.script.compile([
-      OPS.OP_4,
-      number2Buffer(gasLimit),
-      number2Buffer(gasPrice),
-      hex2Buffer(encodedData),
-      hex2Buffer(contractAddress),
-      OPS.OP_CALL
-    ])
-    outputs.addOutput(contract, 0)
-    const changeSat = totalSelectSat.minus(amountSat).minus(feeSat)
-    outputs.addOutput(from, changeSat.toNumber())
-    const outputsScript = outputs.buildIncomplete().toHex().slice(10, -8)
-    return await ledger.qtum.createPaymentTransactionNew(inputs, paths, undefined, outputsScript)
-  }
 }

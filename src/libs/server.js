@@ -6,7 +6,7 @@ let nodeConfigs = {
     qtumInfo
 }
 
-const defaultNodeId = 'qtumInfo'
+const defaultNodeId = 'insight'
 let currentNodeId = defaultNodeId
 
 export default {

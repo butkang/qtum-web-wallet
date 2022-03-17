@@ -164,7 +164,6 @@ export default {
         { icon: 'cloud_upload', name: 'restore_from_key_file' },
         { icon: 'flip_to_front', name: 'restore_from_ledger' },
         { divider: true, name: 'stake' },
-        { icon: 'gavel', name: 'delegation' },
         { divider: true, name: 'wallet' },
         { icon: 'account_balance_wallet', name: 'view' },
         { icon: 'list', name: 'transactions' },
@@ -175,8 +174,7 @@ export default {
         { divider: true, name: 'disc' },
         { icon: 'settings', name: 'settings' }
       ],
-      notifyList: {},
-      delegationShow: false
+      notifyList: {}
     }
   },
   computed: {
@@ -197,12 +195,6 @@ export default {
     },
     headerClass() {
       return this.mode === 'normal' ? 'cyan' : 'orange'
-    }
-  },
-  watch: {
-    async network(newVal) {
-      this.delegationShow = false
-      await this.onlineDelegation(newVal)
     }
   },
   components: {
@@ -261,34 +253,7 @@ export default {
         clearTimeout(this.notifyList[notifyId].timer)
       }
       Vue.set(this.notifyList, notifyId, notify)
-      if (ttl > 0) {
-        this.notifyList[notifyId].timer = setTimeout(() => {
-          Vue.delete(this.notifyList, notifyId)
-        }, ttl * 1000)
-      }
     },
-    async onlineDelegation(network) {
-      // 判断代理挖矿功能是否上线
-      if (localStorage.getItem(`${network}_delegation_online`)) {
-        this.delegationShow = true
-      } else {
-        let height = 0
-        switch (network) {
-          case 'testnet':
-            height = 625000
-            break
-          case 'mainnet':
-            height = 680000
-            break
-        }
-        // 请求高度
-        const res = await qtumInfo.getQtumInfo()
-        if (res.height > height) {
-          localStorage.setItem(`${network}_delegation_online`, true)
-          this.delegationShow = true
-        }
-      }
-    }
   },
   mounted() {
     track.track('lan', config.getLan())
